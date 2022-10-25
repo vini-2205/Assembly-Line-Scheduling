@@ -5,12 +5,14 @@ public class CaminhoMinimo {
   private double p[];
   private Grafo grafo;
   private int pesoT=0;
+  private int aux=1;
+  private int estacao;
 
   public int getPesoT() {
     return pesoT;
   }
 
-  public CaminhoMinimo (Grafo grafo) { this.grafo = grafo; }  
+  public CaminhoMinimo (Grafo grafo, int estacao) { this.grafo = grafo; this.estacao = estacao; }  
   public void obterArvoreCMC (int raiz) throws Exception {
     int n = this.grafo.numVertices();
     this.p = new double[n]; // @{\it peso dos v\'ertices}@
@@ -48,12 +50,21 @@ public class CaminhoMinimo {
 
   }
   public void imprimeCaminho (int origem, int v) {
-    if (origem == v) System.out.println (origem);
+    if (origem == v) {}
     else if (this.antecessor[v] == -1) 
       System.out.println ("Nao existe caminho de " +origem+ " ate " +v);
     else {
       imprimeCaminho (origem, this.antecessor[v]);
-      System.out.println (v);
+      if(aux<=estacao){
+        if((v%2)==0){
+          System.out.println ("Linha 2 e estação: "+aux);
+          aux++;
+        }
+        else if((v%2)!=0){
+          System.out.println ("Linha 1 e estação: "+aux);
+          aux++;
+        }
+      }
     }    
   }
 

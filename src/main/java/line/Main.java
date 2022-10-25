@@ -86,7 +86,7 @@ public class Main {
                     peso = in.nextInt();
                     grafo.insereAresta (v1, v2, peso);    
                 }
-                CaminhoMinimo dj = new CaminhoMinimo (grafo);
+                CaminhoMinimo dj = new CaminhoMinimo (grafo,6);
                 dj.obterArvoreCMC(raiz);
                 dj.calculaPeso();
                 System.out.println("O peso total é: "+ dj.getPesoT());
@@ -108,7 +108,7 @@ public class Main {
                     peso = in.nextInt();
                     grafo.insereAresta (v1, v2, peso);    
                 }
-                CaminhoMinimo dj = new CaminhoMinimo (grafo);
+                CaminhoMinimo dj = new CaminhoMinimo (grafo,9);
                 dj.obterArvoreCMC(raiz);
                 dj.calculaPeso();
                 System.out.println("O peso total é: "+ dj.getPesoT());
@@ -130,7 +130,7 @@ public class Main {
                     peso = in.nextInt();
                     grafo.insereAresta (v1, v2, peso);    
                 }
-                CaminhoMinimo dj = new CaminhoMinimo (grafo);
+                CaminhoMinimo dj = new CaminhoMinimo (grafo,8);
                 dj.obterArvoreCMC(raiz);
                 dj.calculaPeso();
                 System.out.println("O peso total é: "+ dj.getPesoT());
